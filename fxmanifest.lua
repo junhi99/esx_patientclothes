@@ -12,6 +12,5 @@ server_scripts {
 client_scripts {
 	'@es_extended/locale.lua',
 	'config.lua',
-	'en.lua',
 	'client.lua'
 }
