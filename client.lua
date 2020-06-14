@@ -66,7 +66,7 @@ function OpenBajuMenu()
 	end)
 end
 
-AddEventHandler('esx_hospitalclothes:hasExitedMarker', function(zone)
+AddEventHandler('esx_patientclothes:hasExitedMarker', function(zone)
 	ESX.UI.Menu.CloseAll()
 end)
 
@@ -90,22 +90,11 @@ Citizen.CreateThread(function()
 		end
 		if not isInHospitallistingMarker and hasAlreadyEnteredMarker then
 			hasAlreadyEnteredMarker = false
-			TriggerEvent('esx_hospitalclothes:hasExitedMarker')
+			TriggerEvent('esx_patientclothes:hasExitedMarker')
 		end
 	end
 end)
 
-
-
--- Menu Controls
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(2)
-		if IsControlJustReleased(0, Keys['E']) and isInHospitallistingMarker and not menuIsShowed then
-			OpenBajuMenu()
-		end
-	end
-end)
 
 Citizen.CreateThread(function()
 	Holograms()
@@ -142,3 +131,12 @@ Citizen.CreateThread(function()
   DrawText(0.0, 0.0)
   ClearDrawOrigin()
   end
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(2)
+		if IsControlJustReleased(0, Keys['E']) and isInHospitallistingMarker and not menuIsShowed then
+			OpenBajuMenu()
+		end
+	end
+end)
