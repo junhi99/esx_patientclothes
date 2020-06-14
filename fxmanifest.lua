@@ -6,11 +6,11 @@ version '1.0.0'
 server_scripts {
 	'@es_extended/locale.lua',
 	'config.lua',
-	'server.lua'
+	'server/server.lua'
 }
 
 client_scripts {
 	'@es_extended/locale.lua',
 	'config.lua',
-	'client.lua'
+	'client/client.lua'
 }
